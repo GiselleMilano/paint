@@ -9,13 +9,29 @@
   </head>
   <body>
     <div id="main-container">
-      <div id="tools-container">
-        <div id="tools-button-container">
-          <button id="pencil">Pencil</button>
-        </div>
-        <div id="tools-button-container">
-          <button id="erase">Erase</button>
-        </div>
+      <div id="options-container">
+        <label id="options-label">Options</label>
+        <ul id="options-list-container">
+          <li id="options-element-container">
+            <span id="pencil">Pencil</span>
+          </li>
+          <li id="options-element-container">
+            <span id="eraser">Eraser</span>
+          </li>
+          <li>
+            <div id="brush-size-container">
+              <input
+                type="range"
+                id="brush-size"
+                name="brush-size"
+                min="0"
+                max="40"
+                value="4"
+              />
+              <label for="brush-size">4</label>
+            </div>
+          </li>
+        </ul>
       </div>
       <canvas id="canvas" width="800" height="600"></canvas>
     </div>

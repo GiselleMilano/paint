@@ -2,8 +2,10 @@ html, body {
   margin: 0px;
   padding: 0px;
   background-color: #202225;
+  color: #f5f5f5;
   height: 100%;
-  width: 100%  
+  width: 100%;
+  font-family: Verdana, sans-serif;
 }
 
 #main-container {
@@ -16,30 +18,52 @@ html, body {
   gap: 20px;
 }
 
-#tools-container {
+#options-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 240px;
+  height: 600px;
+  gap: 4px;
+  padding: 20px;
+  background-color: #2f3136;
+  border-radius: 8px;
+}
+
+#options-label {
+  font-size: 18px;
+}
+
+#options-list-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 200px;
-  height: 600px;
-  gap: 20px;
-  padding-left: 8px;
-  padding-right: 8px;
-  background-color: #2f3136;
+  list-style-type: none;
+  margin: 0px;
+  padding-left: 10px;
+  padding-top: 10px;
+  gap: 10px;
+  font-size: 14px;
+  cursor:pointer;
 }
 
-#tools-button-container {
+#options-element-container {
   display: flex;
   flex-direction: row;
   justify-content: start;
   width: 100%;
 }
 
-#tools-button-container, button {
+#options-element-container, span {
   width: 80px;
-  background-color: #40444b;
-  border-radius: 3px;
-  color: #f5f5f5;
-  border: 1px solid #6e7279;
-  cursor: pointer;
+}
+
+#brush-size-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#brush-size-container, label {
+  align-items: center;
 }
