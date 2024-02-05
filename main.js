@@ -22,8 +22,14 @@ function startDrawing() {
   ctx.beginPath();
   ctx.lineWidth = brushSize;
 }
+
 function stopDrawing() {
   isDrawing = false;
+}
+
+function onSizeBrushChange(value) {
+  brushSize = Number(value);
+  document.getElementById('brush-size-info').textContent = value;
 }
 
 window.addEventListener('load', drawCanvas);

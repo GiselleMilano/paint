@@ -24,11 +24,12 @@
                 type="range"
                 id="brush-size"
                 name="brush-size"
-                min="0"
+                min="1"
                 max="40"
                 value="4"
+                oninput="onSizeBrushChange(this.value)"
               />
-              <label for="brush-size">4</label>
+              <label id="brush-size-info">4</label>
             </div>
           </li>
         </ul>

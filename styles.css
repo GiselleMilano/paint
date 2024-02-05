@@ -64,6 +64,6 @@ html, body {
   gap: 10px;
 }
 
-#brush-size-container, label {
+#brush-size-info {
   align-items: center;
 }
