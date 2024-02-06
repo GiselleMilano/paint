@@ -12,13 +12,26 @@
       <div id="options-container">
         <label id="options-label">Options</label>
         <ul id="options-list-container">
-          <li id="options-element-container">
-            <span id="pencil">Pencil</span>
+          <li
+            id="pencil-container"
+            class="options-element-container option-selected"
+          >
+            <span
+              id="pencil"
+              class="options-element-container-span"
+              onClick="optionChange(1)"
+              >Pencil</span
+            >
           </li>
-          <li id="options-element-container">
-            <span id="eraser">Eraser</span>
+          <li id="eraser-container" class="options-element-container">
+            <span
+              id="eraser"
+              class="options-element-container-span"
+              onClick="optionChange(2)"
+              >Eraser</span
+            >
           </li>
-          <li>
+          <li class="options-element-container">
             <div id="brush-size-container">
               <input
                 type="range"

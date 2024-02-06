@@ -47,14 +47,17 @@ html, body {
   cursor:pointer;
 }
 
-#options-element-container {
+.options-element-container {
   display: flex;
   flex-direction: row;
   justify-content: start;
   width: 100%;
+  background-color: #2f3136;
+  padding: 4px;
+  border-radius: 4px;
 }
 
-#options-element-container, span {
+.options-element-container-span {
   width: 80px;
 }
 
@@ -66,4 +69,8 @@ html, body {
 
 #brush-size-info {
   align-items: center;
+}
+
+.option-selected {
+  background-color: #50535c;
 }
