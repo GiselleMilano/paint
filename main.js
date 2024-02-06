@@ -5,6 +5,7 @@ let isDrawing = false;
 let brushSize = 4;
 let mouseInside = false;
 let optionSelected = 1;
+let colorBrush = '#000000';
 
 function drawCanvas() {
   canvas.width = canvas.offsetWidth;
@@ -23,7 +24,7 @@ function drawing(event) {
   if (optionSelected === 2) {
     ctx.strokeStyle = '#fff';
   } else {
-    ctx.strokeStyle = '#000000';
+    ctx.strokeStyle = colorBrush;
   }
   ctx.stroke();
 }
@@ -36,7 +37,7 @@ function startDrawing() {
   if (optionSelected === 2) {
     ctx.strokeStyle = '#fff';
   } else {
-    ctx.strokeStyle = '#000000';
+    ctx.strokeStyle = colorBrush;
   }
 }
 
@@ -85,6 +86,11 @@ function optionChange(value) {
   if (optionSelected === 3) {
     removeCanvas();
   }
+}
+
+function onColorBrushChange(value) {
+  colorBrush = value;
+  document.getElementById('colorBrush').textContent = value;
 }
 
 window.addEventListener('load', drawCanvas);

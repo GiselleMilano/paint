@@ -49,12 +49,13 @@ html, body {
 
 .options-element-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
   width: 100%;
-  background-color: #2f3136;
+  background-color: #3f4248;
   padding: 4px;
   border-radius: 4px;
+  gap: 20px;
 }
 
 .options-element-container-span {
@@ -72,5 +73,31 @@ html, body {
 }
 
 .option-selected {
-  background-color: #50535c;
+  background-color: #595d66;
+}
+
+.pencil-color {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+  background-color: #2f3136;
+  padding: 4px;
+  border-radius: 4px;
+  gap: 10px;
+}
+
+#colorBrush {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+#colorBrush:focus {
+  background-color: transparent;
 }

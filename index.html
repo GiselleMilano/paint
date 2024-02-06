@@ -22,6 +22,7 @@
             <span id="eraser" onClick="optionChange(2)">Eraser</span>
           </li>
           <li class="options-element-container">
+            <label id="brush-size-label">Brush Size:</label>
             <div id="brush-size-container">
               <input
                 type="range"
@@ -34,6 +35,16 @@
               />
               <label id="brush-size-info">4</label>
             </div>
+          </li>
+          <li id="color-container" class="options-element-container">
+            <label id="color-label">Brush Color:</label>
+            <input
+              type="color"
+              id="colorBrush"
+              name="colorBrush"
+              value="#000000"
+              onchange="onColorBrushChange(this.value)"
+            />
           </li>
           <li id="clear-container" class="options-element-container">
             <span id="clear" onClick="optionChange(3)">Clear Canvas</span>
