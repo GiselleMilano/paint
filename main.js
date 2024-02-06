@@ -57,11 +57,18 @@ canvas.onmouseup = function () {
   mouseInside = false;
 };
 
+function removeCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
 function optionChange(value) {
   optionSelected = Number(value);
 
   let pencilContainer = document.getElementById('pencil-container');
   let eraserContainer = document.getElementById('eraser-container');
+  let clearContainer = document.getElementById('clear-container');
 
   if (optionSelected === 1) {
     pencilContainer.classList.add('option-selected');
@@ -73,6 +80,10 @@ function optionChange(value) {
     eraserContainer.classList.add('option-selected');
   } else {
     eraserContainer.classList.remove('option-selected');
+  }
+
+  if (optionSelected === 3) {
+    removeCanvas();
   }
 }
 
