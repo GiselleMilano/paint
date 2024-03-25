@@ -36,14 +36,32 @@
               <label id="brush-size-info">4</label>
             </div>
           </li>
-          <li id="color-container" class="options-element-container">
+          <li
+            id="color-container"
+            class="options-element-container-color-inputs"
+          >
             <label id="color-label">Brush Color:</label>
             <input
               type="color"
-              id="colorBrush"
+              class="color"
+              id="color-brush"
               name="colorBrush"
               value="#000000"
               onchange="changeColorBrush(this.value)"
+            />
+          </li>
+          <li
+            id="color-container"
+            class="options-element-container-color-inputs"
+          >
+            <label id="color-label">Canvas Color:</label>
+            <input
+              type="color"
+              id="color-canvas"
+              class="color"
+              name="colorCanvas"
+              value="#ffffff"
+              onchange="changeColorCanvas(this.value)"
             />
           </li>
           <li id="clear-container" class="options-element-container">

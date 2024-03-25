@@ -2,17 +2,14 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 let isDrawing = false;
-let brushSize = 4;
-let mouseInside = false;
 let optionSelected = 1;
-let colorBrush = '#000000';
 
 // Set canvas size and fill canvas rect
 function drawCanvas() {
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = document.getElementById('color-canvas').value;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -42,7 +39,7 @@ function drawing(event) {
   if (optionSelected === 2) {
     ctx.strokeStyle = '#fff';
   } else {
-    ctx.strokeStyle = colorBrush;
+    ctx.strokeStyle = document.getElementById('color-brush').value;
   }
   ctx.stroke();
 }
@@ -52,7 +49,7 @@ function startDrawing(event) {
   if (!isMouseInsideCanvas(event)) return;
   isDrawing = true;
   ctx.beginPath();
-  ctx.lineWidth = brushSize;
+  ctx.lineWidth = document.getElementById('brush-size').value;
 
   if (optionSelected === 2) {
     ctx.strokeStyle = '#fff';
@@ -102,7 +99,15 @@ function changeTool(value) {
 // Update color piked to input element
 function changeColorBrush(value) {
   colorBrush = value;
-  document.getElementById('colorBrush').textContent = value;
+  document.getElementById('color-brush').value = value;
+}
+
+// Update color piked to input element
+function changeColorCanvas(value) {
+  colorCanvas = value;
+  document.getElementById('color-canvas').value = value;
+  ctx.fillStyle = value;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 // Save | Download image
