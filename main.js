@@ -54,7 +54,7 @@ function startDrawing(event) {
   if (optionSelected === 2) {
     ctx.strokeStyle = '#fff';
   } else {
-    ctx.strokeStyle = colorBrush;
+    ctx.strokeStyle = document.getElementById('color-brush').value;
   }
 }
 
@@ -98,13 +98,11 @@ function changeTool(value) {
 
 // Update color piked to input element
 function changeColorBrush(value) {
-  colorBrush = value;
   document.getElementById('color-brush').value = value;
 }
 
 // Update color piked to input element
 function changeColorCanvas(value) {
-  colorCanvas = value;
   document.getElementById('color-canvas').value = value;
   ctx.fillStyle = value;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
