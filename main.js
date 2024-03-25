@@ -124,6 +124,12 @@ function saveCanvas() {
 }
 
 // EVENTS
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('brush-size').value = '4';
+  document.getElementById('color-brush').value = '#000000';
+  document.getElementById('color-canvas').value = '#ffffff';
+});
+
 window.addEventListener('load', drawCanvas);
 document.addEventListener('mousedown', startDrawing);
 document.addEventListener('mousemove', drawing);
