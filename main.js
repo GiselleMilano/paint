@@ -16,10 +16,26 @@ function drawCanvas() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+// Return true if mouse pos is inside the canvas. Also if return false, stop the path
+function isMouseInsideCanvas(event) {
+  canvasPosX = event.pageX - canvas.offsetLeft;
+  canvasPosY = event.pageY - canvas.offsetTop;
+  if (
+    canvasPosX >= 0 &&
+    canvasPosX <= 800 &&
+    canvasPosY >= 0 &&
+    canvasPosY <= 600
+  ) {
+    return true;
+  }
+  isDrawing = false;
+  return false;
+}
+
 // Draw a path when stop is not and the mouse is down
 function drawing(event) {
   if (!isDrawing) return;
-  if (!mouseInside) return;
+  if (!isMouseInsideCanvas(event)) return;
 
   ctx.lineTo(event.offsetX, event.offsetY);
 
@@ -32,7 +48,8 @@ function drawing(event) {
 }
 
 // Draw a new path when the mouse is already down
-function startDrawing() {
+function startDrawing(event) {
+  if (!isMouseInsideCanvas(event)) return;
   isDrawing = true;
   ctx.beginPath();
   ctx.lineWidth = brushSize;
@@ -54,14 +71,6 @@ function changeSizeBrush(value) {
   brushSize = Number(value);
   document.getElementById('brush-size-info').textContent = brushSize;
 }
-
-canvas.onmousedown = function () {
-  mouseInside = true;
-};
-
-canvas.onmouseup = function () {
-  mouseInside = false;
-};
 
 // Delete canvas rect and fill a new canvas rect
 function removeCanvas() {
